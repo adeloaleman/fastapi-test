@@ -1,6 +1,6 @@
 # # # Python and venv
 
-# Installing python, pip and venv
+# Installing python, pip and venv 
 sudo apt -y install python3.11
 sudo apt -y install python3-pip
 sudo apt -y install python3.11-venv
