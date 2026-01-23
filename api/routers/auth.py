@@ -44,7 +44,7 @@ def authenticate_user(db:db_dependency, username:str, password:str):
         return False
     return user
 
-def create_access_token(id:int, username:str, name:str, expires_delta:timedelta):
+def create_access_token(id:str, username:str, name:str, expires_delta:timedelta):
     encode = {'id':id, 'username':username, 'name':name}
     expires = datetime.now(tz=timezone.utc) + expires_delta
     encode.update({'exp':expires})
@@ -65,7 +65,7 @@ async def login_for_access_token(db:db_dependency, form_data:Annotated[OAuth2Pas
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Could not validate user')
     return {
-        'access_token': create_access_token(id=user.id, username=user.username, name=user.name, expires_delta=timedelta(minutes=30)),
+        'access_token': create_access_token(id=user.id, username=user.username, name=user.name, expires_delta=timedelta(minutes=20)), 
         'token_type': 'bearer'
     }
 
