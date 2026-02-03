@@ -16,7 +16,7 @@ load_dotenv()
 AUTH_SECRET_KEY = os.getenv('AUTH_SECRET_KEY')
 AUTH_ALGORITHM = os.getenv('AUTH_ALGORITHM')
 
-
+ 
 def get_db():
     db = SessionLocal()
     try:
