@@ -9,7 +9,7 @@ from .routers import auth
 
 
 load_dotenv()
-
+ 
 app = FastAPI()
 
 Base.metadata.create_all(bind=engine)
