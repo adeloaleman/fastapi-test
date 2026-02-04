@@ -11,7 +11,7 @@ source .venv/bin/activate
 pip install --upgrade pip
 which python
 which pip
-
+ 
 # Installing libraries
 vi requirements.txt
 fastapi[standard]>=
